@@ -1,0 +1,4 @@
+import '@mantine/core/styles.css';import './globals.css';import {ColorSchemeScript,MantineProvider}from '@mantine/core';import {AppShell}from '@/components/AppShell';
+export const metadata={title:'PongFind — used table-tennis gear',description:'Search second-hand table-tennis gear across European marketplaces.',manifest:'/manifest.webmanifest',icons:{apple:'/icon.svg'}};
+export const viewport={themeColor:'#087f5b',width:'device-width',initialScale:1,viewportFit:'cover'};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en" suppressHydrationWarning><head><ColorSchemeScript/></head><body><MantineProvider theme={{primaryColor:'teal',fontFamily:'Inter, ui-sans-serif, system-ui, sans-serif',defaultRadius:'md'}}><AppShell>{children}</AppShell></MantineProvider></body></html>}
