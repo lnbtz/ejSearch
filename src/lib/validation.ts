@@ -1,0 +1,2 @@
+import { z } from 'zod';
+export const searchSchema = z.object({ q:z.string().trim().min(2).max(120), minPrice:z.coerce.number().min(0).max(100000).optional(), maxPrice:z.coerce.number().min(0).max(100000).optional(), shippingOnly:z.enum(['true','false']).transform(v=>v==='true').optional(), limit:z.coerce.number().int().min(1).max(50).default(30) }).refine(v=>v.minPrice===undefined||v.maxPrice===undefined||v.minPrice<=v.maxPrice,{message:'Minimum price must not exceed maximum price'});
