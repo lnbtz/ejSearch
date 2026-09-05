@@ -1,0 +1,1 @@
+'use client';import{Alert,Button}from'@mantine/core';export default function ErrorPage({reset}:{reset:()=>void}){return <Alert title="Something went wrong" color="red"><Button mt="sm" onClick={reset}>Try again</Button></Alert>}
